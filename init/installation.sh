@@ -1,6 +1,9 @@
 install_argo_cd_cli() {
     bash ./helpers/colored-message.sh "Green" "Installing argocd cli."
     brew install argocd 
+
+    bash ./init/login-cli.sh
+
 }
 
 if [ "$(kubectl config current-context)" = "minikube" ]; then
