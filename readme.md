@@ -27,7 +27,7 @@
     <li><strong>Other Utility Scripts</strong>: Likely include namespace checks, port forwarding, and debugging tools.</li>
 </ul>
 
-<p>The manifests yaml is from : https://github.com/mabusaa/argocd-course-apps-definitions/tree/main/applications%20and%20projects </p>
+<p>The manifests yaml are from : https://github.com/mabusaa/argocd-course-apps-definitions/tree/main/applications%20and%20projects </p>
 
 ###
 
