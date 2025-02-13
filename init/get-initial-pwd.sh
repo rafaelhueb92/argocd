@@ -1,7 +1,5 @@
-echo "The Password in base64"
-PASSWORD=$(kubectl get secret -n argocd argocd-initial-admin-secret -o yaml | grep -o 'password: .*' | \
-sed 's/password: //')
+PASSWORD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d)
 
-echo $PASSWORD
+echo -n "$PASSWORD" > ./init/password.txt
 
-echo -n "$PASSWORD" | base64 -d > password.txt
+bash ./helpers/colored-message.sh "Blue" "The Password is created in init/password.txt"
