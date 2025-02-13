@@ -29,9 +29,11 @@ elif [ $1 == "Helm"]; then
     helm install my-release argo/argo-cd
     exit 0
 else 
-    echo "ERRO! Invalid Option!"
+    echo "ERROR! Invalid Option!"
     exit 1
 fi
 
 echo "Applying Manifest"
-kubectl apply -f "$ARGO_CD_URL_MANIFEST"
+kubectl apply -n argocd -f "$ARGO_CD_URL_MANIFEST"
+
+kubectl get pods -n argocd
